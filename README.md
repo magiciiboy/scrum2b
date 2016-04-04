@@ -10,7 +10,7 @@ SUMMARY
 
 **Scrum2B Tool** (www.scrum2b.com) is a Project Management application, specialized in Scrum/Agile projects and Software Development, is using and maintained by ScrumTobe Software (www.scrumtobe.com). Scrum2B Tool is built as a plugin of Redmine (www.redmine.org), free to use.
 
-- Technologies: Ruby On Rails 3.x/4.x, Redmine 2.4.x, 2.3.x, 2.2.x, 2.1.x, 2.0.x, AngularJS/Ajax, Postgres/MySQL
+- Technologies: Ruby On Rails 3.x/4.x, Redmine 3.x, 2.4.x, 2.3.x, 2.2.x, 2.1.x, 2.0.x, Postgres/MySQL
 - Methodologies: Scrum/Agile, Continuous Integration
 - Installation Guide: http://github.com/scrum2b/scrum2b/wiki/Installation-Guide
 
@@ -24,7 +24,7 @@ We are focus to make easier and more simple to practice Scrum in Project managem
 - Screen shots: http://scrum2b.com/documents/11
 
 **Demo:**
-- *http://scrum2b.com/projects/scrum2b-demo*
+- *http://scrum2b.herokuapp.com/projects/scrum2b-demo*
 - *Username/password: **demo/demo1234***
 
 LICENSE
