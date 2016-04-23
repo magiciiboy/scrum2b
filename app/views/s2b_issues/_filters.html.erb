@@ -1,0 +1,61 @@
+<div class="filter" >
+  <div class="filter_right">
+    <div style="width: 50%; float: left;">
+
+      <span class="icon_backlog" active-show-backlog="activeShowIssueBacklog()"><%= l(:label_backlog) %><i class="fa fa-angle-right fa-lg"></i></span>
+
+      <div class="show-menu hide">
+        <ul class="menu-issue">
+          <li class="menu-change-sprint">
+            <a href=""><%= l(:label_change_sprint) %></a>
+            <ul class="menu-change hide" >
+              <li class="change-sprint-main" ng-repeat="version in versions" ng-hide="isActiveVersion(version)" >
+                <a href="" change-version-issues version-id="{{version.id}}" >{{version.name}}</a>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-change-status">
+            <a href=""><%= l(:label_change_status) %></a>
+            <ul class="menu-change hide" >
+              <li ng-hide="">
+                <a href="" change-status-issues status-id="{{statusIds.status_no_start}}" class=""><%= l(:label_new_issue) %></a>
+              </li>
+              <li ng-hide="">
+                <a href="" change-status-issues status-id="{{statusIds.status_inprogress}}" class=""><%= l(:label_in_progress) %></a>
+              </li>
+              <li ng-hide="">
+                <a href="" change-status-issues status-id="{{statusIds.status_completed}}" class=""><%= l(:label_resolved) %></a>
+              </li>
+              <li ng-hide="">
+                <a href="" change-status-issues status-id="{{statusIds.status_closed}}" class=""><%= l(:label_close) %></a>
+              </li>
+            </ul>
+          </li>
+          <li ><a delete-many-issue href=""><%= l(:label_delete) %></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="width: 50%; float: right;">
+      <form ng-submit="filterIssues()">
+        <ul class="filter-ul" >
+          <li>
+            <select ng-model="filterversion">
+              <option ng-repeat="version in versions" value="{{version}}" ng-selected="isActiveVersion(version)">{{ version.name }}</option>
+            </select>
+          </li>
+          <li>
+            <select name="select_member" id="select_member" ng-model='filtermember'>
+              <option value="all" ng-selected="memberActiveShow == 'all'" ><%= l(:label_all_member)%></option>
+              <option ng-repeat="member in members" value=" {{ member}}" ng-selected="memberActiveShow==member.id">{{ member.firstname }}</option>
+            </select>
+          </li>
+          <li>
+            <input type="submit" value="<%= l(:label_filter) %>">
+          </li>
+        </ul>
+      </form>
+    </div>
+
+  </div>
+</div> <!--end filter-->
